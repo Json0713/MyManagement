@@ -1,10 +1,10 @@
 .header-navbar {
-  --clr-bg: #198a5b;
-  --clr-bg-dark: #15784d;
+  --clr-bg: #10262b;
+  --clr-bg-dark: #1a3a3f;
   --clr-accent: #ffffff;
   --clr-hover-bg: #ffffff;
-  --clr-hover-text: #198a5b;
-  --clr-white: #ffffff;
+  --clr-hover-text: #10262b;
+  --clr-white: #ffff;
 
   background: linear-gradient(180deg, var(--clr-bg), var(--clr-bg-dark));
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
@@ -120,7 +120,7 @@
       }
 
       &:hover {
-        background: var(--clr-bg);
+        background: var(--clr-bg-dark);
         color: var(--clr-white);
 
         i {
@@ -135,7 +135,6 @@
     .navbar-collapse {
       border-radius: 0 0 14px 14px;
       padding: 1.2rem 1rem;
-      background: linear-gradient(180deg, var(--clr-bg), var(--clr-bg-dark));
     }
 
     .mobile-nav-container {
