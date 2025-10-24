@@ -1,31 +1,39 @@
 .header-navbar {
   --clr-bg: #198a5b;
   --clr-bg-dark: #15784d;
-  --clr-accent: #ffff;
-  --clr-hover-bg: #fff;
+  --clr-accent: #ffffff;
+  --clr-hover-bg: #ffffff;
   --clr-hover-text: #198a5b;
-  --clr-white: #fff;
+  --clr-white: #ffffff;
 
   background: linear-gradient(180deg, var(--clr-bg), var(--clr-bg-dark));
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
   transition: all 0.3s ease;
   backdrop-filter: blur(6px);
+  z-index: 1000;
 
+  /* Brand */
   .navbar-brand {
     color: var(--clr-white);
+    font-weight: 600;
+    letter-spacing: 0.5px;
   }
 
   .text-accent {
     color: var(--clr-accent);
   }
 
+  /* Nav links */
   .nav-link {
     color: var(--clr-white);
     font-weight: 500;
+    border-radius: 8px;
+    padding: 0.45rem 0.8rem;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
     position: relative;
     transition: all 0.3s ease;
-    border-radius: 8px;
-    padding: 0.5rem 0.8rem;
 
     i {
       font-size: 1rem;
@@ -57,6 +65,7 @@
     }
   }
 
+  /* Login Button */
   .btn-login {
     display: flex;
     align-items: center;
@@ -78,10 +87,46 @@
     }
   }
 
+  /* Toggler (mobile menu button) */
   .navbar-toggler {
     color: var(--clr-white);
     &:focus {
       box-shadow: none;
+    }
+  }
+
+  /* Dropdown styling (desktop "More" menu) */
+  .dropdown-menu {
+    background: #ffffff;
+    border: none;
+    border-radius: 10px;
+    padding: 0.5rem;
+    min-width: 180px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    animation: fadeIn 0.2s ease-in-out;
+
+    .dropdown-item {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: #333;
+      font-weight: 500;
+      border-radius: 8px;
+      padding: 0.5rem 0.8rem;
+      transition: all 0.2s ease;
+
+      i {
+        color: var(--clr-bg);
+      }
+
+      &:hover {
+        background: var(--clr-bg);
+        color: var(--clr-white);
+
+        i {
+          color: var(--clr-white);
+        }
+      }
     }
   }
 
@@ -90,13 +135,21 @@
     .navbar-collapse {
       border-radius: 0 0 14px 14px;
       padding: 1.2rem 1rem;
+      background: linear-gradient(180deg, var(--clr-bg), var(--clr-bg-dark));
     }
 
     .mobile-nav-container {
       display: flex;
       justify-content: space-between;
       align-items: flex-start;
+      width: 100%;
       gap: 1rem;
+    }
+
+    .navbar-nav {
+      flex-direction: column;
+      gap: 0.8rem;
+      width: 100%;
     }
 
     .mobile-login {
@@ -107,15 +160,28 @@
     }
 
     .btn-login {
-      width: 140px;
+      width: 130px;
       padding: 0.4rem 1rem;
       border-radius: 24px;
     }
-
   }
 
+  /* Scroll effect */
   &.scrolled {
-    background: rgba(25, 138, 91, 0.9);
+    background: rgba(25, 138, 91, 0.92);
     backdrop-filter: blur(8px);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+  }
+
+  /* Animations */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-6px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
 }

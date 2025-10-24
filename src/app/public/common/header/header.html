@@ -1,10 +1,12 @@
 <nav class="header-navbar navbar navbar-expand-md sticky-top" role="navigation">
   <div class="container-fluid">
+    <!-- Brand -->
     <a class="navbar-brand d-flex align-items-center gap-2" routerLink="/" aria-label="Home">
       <i class="bi bi-boxes text-accent fs-4"></i>
       <span class="fw-bold text-white">MyManagement</span>
     </a>
 
+    <!-- Toggler -->
     <button
       class="navbar-toggler border-0"
       type="button"
@@ -17,52 +19,61 @@
       <i class="bi bi-list fs-2"></i>
     </button>
 
+    <!-- Collapsible Content -->
     <div class="collapse navbar-collapse" id="mainNav">
-      <div class="mobile-nav-container d-md-none">
-        <ul class="navbar-nav align-items-start flex-column gap-2">
-          <li class="nav-item">
-            <a class="nav-link d-flex align-items-center gap-2" routerLink="/public" routerLinkActive="active">
-              <i class="bi bi-house-heart-fill"></i><span>Home</span>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link d-flex align-items-center gap-2" routerLink="/about" routerLinkActive="active">
-              <i class="bi bi-search-heart"></i><span>About</span>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link d-flex align-items-center gap-2" routerLink="/contact" routerLinkActive="active">
-              <i class="bi bi-envelope-heart"></i><span>Contact</span>
-            </a>
-          </li>
-        </ul>
+      <!-- MOBILE VIEW -->
+      <div class="mobile-nav-container d-md-none w-100">
+        <div class="d-flex justify-content-between w-100">
+          <!-- Left side: Navs -->
+          <ul class="navbar-nav align-items-start flex-column gap-2">
+            <li class="nav-item">
+              <a class="nav-link d-flex align-items-center gap-2" routerLink="/public" routerLinkActive="active">
+                <i class="bi bi-house-heart-fill"></i><span>Home</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link d-flex align-items-center gap-2" routerLink="/about" routerLinkActive="active">
+                <i class="bi bi-search-heart"></i><span>About</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link d-flex align-items-center gap-2" routerLink="/contact" routerLinkActive="active">
+                <i class="bi bi-envelope-heart"></i><span>Contact</span>
+              </a>
+            </li>
+          </ul>
 
-                <ul class="navbar-nav align-items-start flex-column gap-2">
-          <li class="nav-item">
-            <a class="nav-link d-flex align-items-center gap-2" routerLink="/project" routerLinkActive="active">
-              <i class="bi bi-kanban"></i><span>Projects</span>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link d-flex align-items-center gap-2" routerLink="/resume" routerLinkActive="active">
-              <i class="bi bi-file-earmark-post"></i><span>Resume</span>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link d-flex align-items-center gap-2" routerLink="/service" routerLinkActive="active">
-              <i class="bi bi-basket2"></i><span>Services</span>
-            </a>
-          </li>
-        </ul>
+          
 
-        <div class="mobile-login">
-          <button class="btn-login" aria-label="Login">
-            <i class="bi bi-person-circle"></i><span>Login</span>
-          </button>
+          <!-- Extra Navs (Mobile) -->
+          <ul class="navbar-nav align-items-start flex-column gap-2">
+            <li class="nav-item">
+              <a class="nav-link d-flex align-items-center gap-2" routerLink="/project" routerLinkActive="active">
+                <i class="bi bi-kanban"></i><span>Projects</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link d-flex align-items-center gap-2" routerLink="/resume" routerLinkActive="active">
+                <i class="bi bi-file-earmark-post"></i><span>Resume</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link d-flex align-items-center gap-2" routerLink="/service" routerLinkActive="active">
+                <i class="bi bi-basket2"></i><span>Services</span>
+              </a>
+            </li>
+          </ul>
+
+          <!-- Right side: Login -->
+          <div class="mobile-login">
+            <button class="btn-login" aria-label="Login">
+              <i class="bi bi-person-circle"></i><span>Login</span>
+            </button>
+          </div>
         </div>
       </div>
 
-      <!-- Desktop navigation -->
+      <!-- DESKTOP VIEW -->
       <ul class="navbar-nav ms-auto mb-2 mb-md-0 align-items-md-center gap-md-3 d-none d-md-flex">
         <li class="nav-item">
           <a class="nav-link d-flex align-items-center gap-1" routerLink="/public" routerLinkActive="active">
@@ -79,8 +90,40 @@
             <i class="bi bi-envelope"></i><span>Contact</span>
           </a>
         </li>
+
+        <!-- Dropdown for extra navs -->
+        <li class="nav-item dropdown">
+          <a
+            class="nav-link dropdown-toggle d-flex align-items-center gap-1"
+            href="#"
+            id="moreDropdown"
+            role="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            <i class="bi bi-grid-3x3-gap-fill"></i><span>More</span>
+          </a>
+          <ul class="dropdown-menu dropdown-menu-end shadow" aria-labelledby="moreDropdown">
+            <li>
+              <a class="dropdown-item d-flex align-items-center gap-2" routerLink="/project">
+                <i class="bi bi-kanban"></i><span>Projects</span>
+              </a>
+            </li>
+            <li>
+              <a class="dropdown-item d-flex align-items-center gap-2" routerLink="/resume">
+                <i class="bi bi-file-earmark-post"></i><span>Resume</span>
+              </a>
+            </li>
+            <li>
+              <a class="dropdown-item d-flex align-items-center gap-2" routerLink="/service">
+                <i class="bi bi-basket2"></i><span>Services</span>
+              </a>
+            </li>
+          </ul>
+        </li>
       </ul>
 
+      <!-- Desktop Login -->
       <button class="btn-login ms-md-3 d-none d-md-flex" aria-label="Login">
         <i class="bi bi-person-circle"></i><span>Login</span>
       </button>
