@@ -1,3 +1,106 @@
-<div>
-  <h1>Hello World!</h1>
-</div>
+<main class="index-root container-fluid px-3 px-md-5">
+  <!-- HERO -->
+  <section class="hero row align-items-center my-5">
+    <div class="col-12 col-lg-7">
+      <p class="eyebrow text-muted mb-2">Welcome • MyManagement</p>
+
+      <h1 class="hero-title mb-3">
+        Manage your day. <span class="text-accent">Master your progress.</span>
+      </h1>
+
+      <p class="hero-sublead text-muted mb-4">
+        A lightweight personal hub to track tasks, finances, and habits — designed for clarity and kept simple so you can focus on what matters.
+      </p>
+
+      <div class="d-flex gap-3 flex-wrap">
+        <a
+          routerLink="/public"
+          class="btn primary-cta rounded-5 d-inline-flex align-items-center"
+          aria-label="Get started"
+        >
+          <i class="bi bi-rocket-fill me-2"></i>Get Started
+        </a>
+
+        <a
+          routerLink="/about"
+          class="btn secondary-cta rounded-5 d-inline-flex align-items-center"
+          aria-label="Learn more"
+        >
+          <i class="bi bi-person-lines-fill me-2"></i>About the Project
+        </a>
+      </div>
+
+      <ul class="mt-4 small list-inline hero-meta mb-0">
+        <li class="list-inline-item"><strong>Built:</strong> Personal productivity</li>
+        <li class="list-inline-item">•</li>
+        <li class="list-inline-item"><strong>Tech:</strong> Angular 20 • Bootstrap</li>
+        <li class="list-inline-item">•</li>
+        <li class="list-inline-item"><strong>Style:</strong> Dark accent theme</li>
+      </ul>
+    </div>
+
+    <div class="col-12 col-lg-5 text-center mt-4 mt-lg-0">
+      <div class="hero-art">
+        <img
+          src="assets/progressive-web-app.webp"
+          alt="Illustration of productivity tools"
+          class="img-fluid tilt"
+          loading="lazy"
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURES -->
+  <section class="features py-5">
+    <div class="container px-0 text-center">
+      <h2 class="section-title mb-3">Core Capabilities</h2>
+      <p class="text-muted mb-4">
+        Focused tools to plan your day, review your progress, and manage personal finances — without the noise.
+      </p>
+
+      <div class="row g-4">
+        @for (f of features; track f) {
+          <div class="col-12 col-md-6 col-lg-3">
+            <article class="card feature-card p-4 h-100">
+              <div class="icon-wrap mb-3 mx-auto">
+                <i [class]="f.icon" aria-hidden="true"></i>
+              </div>
+              <h5 class="mb-2">{{ f.title }}</h5>
+              <p class="small text-muted mb-3">{{ f.desc }}</p>
+              <a class="small fw-semibold link-cta" routerLink="/public" aria-label="Explore {{ f.title }}">Explore</a>
+            </article>
+          </div>
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT PREVIEW -->
+  <section class="about-preview py-5">
+    <div class="container px-0">
+      <div class="row align-items-center gx-4">
+        <div class="col-12 col-md-5">
+          <img
+            src="assets/Cross-Platform.png"
+            alt="Illustration of multi-platform app"
+            class="img-fluid rounded-3 shadow-sm"
+            loading="lazy"
+          />
+        </div>
+
+        <div class="col-12 col-md-7 mt-4 mt-md-0">
+          <h3>Why I built MyManagement</h3>
+          <p class="text-muted mb-3">
+            This project is a personal workspace — a single place to measure daily wins,
+            hold myself accountable, and keep financial clarity. It's designed for minimal
+            friction and sustainable habits.
+          </p>
+          <a routerLink="/about" class="btn btn-link p-0 fw-semibold">Read more...</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <app-feedback></app-feedback>
+</main>

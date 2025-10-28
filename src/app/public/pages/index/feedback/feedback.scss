@@ -1,0 +1,189 @@
+/* =====================================
+   FEEDBACK SECTION
+   Modernized + Optimized for Angular 20
+===================================== */
+
+.feedback-section {
+  color: #0f1a1c;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 1rem 1rem 0 0;
+  padding: 3rem 1rem;
+
+  .container {
+    max-width: 1100px;
+  }
+
+  h5 {
+    color: #0f1a1c;
+    font-weight: 600;
+  }
+
+  p {
+    color: #0f1a1c;
+    font-size: 0.9rem;
+    line-height: 1.6;
+    margin-bottom: 0;
+  }
+
+  .text-muted {
+    color: rgba(255, 255, 255, 0.65) !important;
+  }
+
+  .text-secondary {
+    color: rgba(255, 255, 255, 0.45) !important;
+  }
+}
+
+/* =====================================
+   FEEDBACK MINI CARD
+===================================== */
+.feedback-card {
+  background: #15282b;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 1rem;
+  padding: 1.25rem 1.5rem;
+  min-width: 270px;
+  text-align: left;
+  transition: all 0.3s ease;
+  cursor: pointer;
+
+  i {
+    color: #00bfa5;
+    font-size: 1.25rem;
+  }
+
+  h6 {
+    color: #fff;
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+  }
+
+  p {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.85rem;
+    margin-bottom: 0;
+  }
+
+  &:hover {
+    background: #1c3539;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 191, 165, 0.1);
+  }
+}
+
+/* =====================================
+   MODAL STYLING
+===================================== */
+.modal-content {
+  background: #1a3a3f;
+  color: #e0e0e0;
+  border: none;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+
+  .modal-header {
+    border-bottom: none;
+
+    .modal-title {
+      color: #fff;
+      font-weight: 600;
+    }
+
+    .btn-close {
+      filter: invert(1) brightness(80%);
+    }
+  }
+
+  .form-label {
+    color: rgba(255, 255, 255, 0.75);
+    font-weight: 500;
+  }
+
+  .form-control {
+    background: #15282b;
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 0.75rem;
+    padding: 0.6rem 0.9rem;
+    transition: border-color 0.25s ease, box-shadow 0.25s ease;
+
+    &::placeholder {
+      color: rgba(255, 255, 255, 0.4);
+    }
+
+    &:focus {
+      border-color: #00bfa5;
+      box-shadow: 0 0 0 0.25rem rgba(0, 191, 165, 0.2);
+    }
+  }
+
+  textarea.form-control {
+    resize: none;
+  }
+
+  .btn.primary-cta {
+    background: #00bfa5;
+    border: none;
+    color: #fff;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+      background: #00a18c;
+    }
+  }
+}
+
+/* =====================================
+   ALERT MESSAGE
+===================================== */
+.alert {
+  border: none;
+  font-size: 0.85rem;
+  color: #0f5132;
+  background-color: #d1e7dd;
+  border-radius: 0.5rem;
+  padding: 0.75rem 1rem;
+
+  .btn-close {
+    filter: invert(0);
+  }
+}
+
+/* =====================================
+   RATING STARS
+===================================== */
+#feedbackRating {
+  i {
+    cursor: pointer;
+    font-size: 1.2rem;
+    transition: color 0.2s ease;
+
+    &:hover,
+    &.active {
+      color: #ffb400 !important;
+    }
+  }
+}
+
+/* =====================================
+   RESPONSIVE TWEAKS
+===================================== */
+@media (max-width: 768px) {
+  .feedback-section {
+    text-align: center;
+
+    .container {
+      flex-direction: column !important;
+    }
+
+    .feedback-message {
+      margin-bottom: 1.5rem;
+    }
+
+    .feedback-card {
+      width: 100%;
+      max-width: 360px;
+      margin: 0 auto;
+    }
+  }
+}

@@ -1,0 +1,213 @@
+// ============================
+// index.scss — MyManagement (Optimized)
+// ============================
+
+@use "sass:color";
+
+// ---------- VARIABLES ----------
+$primary-dark: #10262b;
+$accent-dark: #1a3a3f;
+$text-main: #222;
+$text-muted: #6c757d;
+$border-light: rgba(0, 0, 0, 0.08);
+$transition: 0.3s ease-in-out;
+
+// ---------- GLOBAL ----------
+.index-root {
+  font-family: 'Manrope', sans-serif;
+  color: $text-main;
+  line-height: 1.6;
+  overflow-x: hidden;
+
+  section {
+    position: relative;
+  }
+
+  a {
+    text-decoration: none;
+    transition: all $transition;
+  }
+
+  .text-accent {
+    color: $accent-dark;
+  }
+}
+
+// ---------- HERO ----------
+.hero {
+  min-height: 70vh;
+
+  .hero-title {
+    font-size: clamp(2.2rem, 5vw, 3.5rem);
+    font-weight: 700;
+    color: $primary-dark;
+    letter-spacing: -0.02em;
+  }
+
+  .hero-sublead {
+    max-width: 600px;
+  }
+
+  .primary-cta {
+    background: $primary-dark;
+    color: #fff;
+    border-radius: 10px;
+    padding: 0.75rem 1.5rem;
+    font-weight: 600;
+    box-shadow: 0 4px 10px rgba($primary-dark, 0.2);
+
+    &:hover {
+      background: color.adjust($primary-dark, $lightness: -5%);
+      transform: translateY(-2px);
+    }
+  }
+
+  .secondary-cta {
+    background: transparent;
+    border: 1.5px solid $accent-dark;
+    color: $accent-dark;
+    border-radius: 10px;
+    padding: 0.75rem 1.5rem;
+
+    &:hover {
+      background: $accent-dark;
+      color: #fff;
+    }
+  }
+
+  .hero-art {
+    position: relative;
+
+    img.tilt {
+      transition: transform 0.8s ease;
+
+      &:hover {
+        transform: rotate(-2deg) scale(1.05);
+      }
+    }
+
+    .floating-badge {
+      position: absolute;
+      bottom: 10%;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #fff;
+      color: $primary-dark;
+      padding: 0.4rem 1rem;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      opacity: 0.9;
+      transition: all $transition;
+
+      &:hover {
+        opacity: 1;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      }
+    }
+  }
+}
+
+// ---------- FEATURES ----------
+.features {
+  border-top: 1px solid $border-light;
+
+  .section-title {
+    font-weight: 700;
+    color: $primary-dark;
+  }
+
+  .feature-card {
+    border: none;
+    border-radius: 16px;
+    transition: all $transition;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.04);
+
+    &:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 10px 16px rgba(0, 0, 0, 0.08);
+    }
+
+    .icon-wrap {
+      background: rgba($primary-dark, 0.07);
+      color: $primary-dark;
+      font-size: 2rem;
+      width: 60px;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      transition: all $transition;
+
+      &:hover {
+        background: $primary-dark;
+        color: #fff;
+      }
+    }
+
+    .link-cta {
+      color: $accent-dark;
+
+      &:hover {
+        color: color.adjust($accent-dark, $lightness: -10%);
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+// ---------- ABOUT PREVIEW ----------
+.about-preview {
+  border-top: 1px solid $border-light;
+  border-bottom: 1px solid $border-light;
+
+  .about-img-wrap {
+    position: relative;
+    overflow: hidden;
+    border-radius: 16px;
+
+    img {
+      transition: transform 1s ease;
+    }
+
+    &:hover img {
+      transform: scale(1.05);
+    }
+
+    .img-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, transparent 60%, rgba($accent-dark, 0.1) 100%);
+      border-radius: inherit;
+    }
+  }
+
+  .quote-box {
+    border-color: $accent-dark;
+    font-size: 0.95rem;
+  }
+}
+
+// ---------- REVEAL ANIMATIONS ----------
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s $transition, transform 0.8s $transition;
+
+  &.fade-up {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// ---------- RESPONSIVENESS ----------
+@media (max-width: 992px) {
+  .hero {
+    text-align: center;
+
+    .hero-art {
+      margin-top: 2rem;
+    }
+  }
+}
