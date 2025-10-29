@@ -21,44 +21,55 @@
 
     <!-- Collapsible Content -->
     <div class="collapse navbar-collapse" id="mainNav">
+
       <!-- MOBILE VIEW -->
       <div class="mobile-nav-container d-md-none w-100">
-        <div class="d-flex justify-content-between w-100">
-          <!-- Left side: Navs -->
-          <ul class="navbar-nav align-items-start flex-column gap-2">
-            <li class="nav-item">
-              <a class="nav-link d-flex align-items-center gap-2" routerLink="/public" routerLinkActive="active">
-                <i class="bi bi-house-heart-fill"></i><span>Home</span>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link d-flex align-items-center gap-2" routerLink="/about" routerLinkActive="active">
-                <i class="bi bi-search-heart"></i><span>About</span>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link d-flex align-items-center gap-2" routerLink="/contact" routerLinkActive="active">
-                <i class="bi bi-envelope-heart"></i><span>Contact</span>
-              </a>
-            </li>
-          </ul>
+        <div class="d-flex flex-column w-100 gap-3">
 
+          <!-- Top Section: Navs -->
+          <div class="d-flex justify-content-between">
+            <!-- Left side: Navs -->
+            <ul class="navbar-nav align-items-start flex-column gap-2">
+              <li class="nav-item">
+                <a class="nav-link d-flex align-items-center gap-2" routerLink="/public" routerLinkActive="active">
+                  <i class="bi bi-house-heart-fill"></i><span>Home</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link d-flex align-items-center gap-2" routerLink="/about" routerLinkActive="active">
+                  <i class="bi bi-search-heart"></i><span>About</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link d-flex align-items-center gap-2" routerLink="/contact" routerLinkActive="active">
+                  <i class="bi bi-envelope-heart"></i><span>Contact</span>
+                </a>
+              </li>
+            </ul>
 
-          <!-- Extra Navs (Mobile) -->
-          <ul class="navbar-nav align-items-start flex-column gap-2">
-            <li class="nav-item">
-              <a class="nav-link d-flex align-items-center gap-2" routerLink="/project" routerLinkActive="active">
-                <i class="bi bi-kanban"></i><span>Projects</span>
-              </a>
-            </li>
-          </ul>
+            <!-- Extra Navs -->
+            <ul class="navbar-nav align-items-start flex-column gap-2">
+              <li class="nav-item">
+                <a class="nav-link d-flex align-items-center gap-2" routerLink="/project" routerLinkActive="active">
+                  <i class="bi bi-kanban"></i><span>Projects</span>
+                </a>
+              </li>
+            </ul>
 
-          <!-- Right side: Login -->
-          <div class="mobile-login">
-            <button class="btn-login" aria-label="Login">
-              <i class="bi bi-leaf"></i><span>Leaf</span>
-            </button>
+            <!-- Right side: Login -->
+            <div class="mobile-login">
+              <button class="btn-login" aria-label="Login" routerLink="/login" routerLinkActive="active">
+                <i class="bi bi-leaf"></i><span>Login</span>
+              </button>
+            </div>
           </div>
+
+          <!-- Bottom Section: Date-Time -->
+          <div class="mobile-date-time text-center mt-2">
+            <app-date-time></app-date-time>
+          </div>
+
+
         </div>
       </div>
 
@@ -94,14 +105,21 @@
           </a>
           <ul class="dropdown-menu dropdown-menu-end shadow" aria-labelledby="moreDropdown">
             <li>
-              <a class="dropdown-item d-flex align-items-center gap-2" routerLink="/resume">
-                <i class="bi bi-leaf-fill"></i><span>Leaf</span>
+              <a class="dropdown-item d-flex align-items-center gap-2" routerLink="/login">
+                <i class="bi bi-leaf-fill"></i><span>Login</span>
               </a>
             </li>
             <li>
               <a class="dropdown-item d-flex align-items-center gap-2" routerLink="/project">
                 <i class="bi bi-kanban"></i><span>Projects</span>
               </a>
+            </li>
+            <li>
+              <!-- Desktop: Add date-time inside dropdown bottom -->
+              <div class="dropdown-divider"></div>
+              <div class="px-3 py-2 text-center small text-muted">
+                <app-date-time></app-date-time>
+              </div>
             </li>
           </ul>
         </li>
