@@ -7,7 +7,7 @@
       <h5 class="fw-semibold mb-2 text-accent">Start small. Scale habits.</h5>
       <p class="small mb-3 mb-md-0">
         Build routines. Track progress. Improve over time.<br />
-        Every system starts with one small action — let’s make yours count.
+        Every system starts with one small action let's make yours count.
       </p>
     </div>
 
@@ -21,9 +21,9 @@
       aria-label="Open feedback form"
     >
       <i class="bi bi-chat-dots-fill text-accent fs-3 mb-2"></i>
-      <h6 class="fw-semibold mb-1">We’d love your feedback</h6>
+      <h6 class="fw-semibold mb-1">We'd love your feedback</h6>
       <p class="small text-muted mb-0">
-        Share your thoughts — it helps MyManagement improve.
+        Share your thoughts it helps MyManagement improve.
       </p>
     </div>
   </div>
@@ -40,6 +40,7 @@
       <div class="modal-content rounded-4 border-0 shadow-lg">
         <div class="modal-header border-0">
           <h5 class="modal-title fw-semibold" id="feedbackModalLabel">
+            <i class="bi bi-leaf me-2"></i>
             Send Feedback
           </h5>
           <button
@@ -58,14 +59,7 @@
               role="alert"
             >
               <i class="bi bi-check-circle-fill me-2"></i>
-              Thanks for your feedback! We appreciate your input.
-              <button
-                type="button"
-                class="btn-close"
-                data-bs-dismiss="alert"
-                aria-label="Close"
-                (click)="alertVisible = false"
-              ></button>
+              Thanks for your feedback!
             </div>
           }
 
@@ -112,10 +106,10 @@
 
             <!-- Rating Stars -->
             <div class="mb-4 text-center">
-              <label class="form-label small fw-semibold mb-2 d-block">
+              <label class="form-label mb-2 d-block">
                 Rate your experience
               </label>
-              <div class="rating-stars">
+              <div class="rating-stars fs-5">
                 @for (star of [1, 2, 3, 4, 5]; track star) {
                   <i
                     class="bi"

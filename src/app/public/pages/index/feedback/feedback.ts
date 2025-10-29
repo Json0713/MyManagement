@@ -45,7 +45,7 @@ export class Feedback {
       this.feedback.rating = 0;
 
       // Auto-hide alert
-      setTimeout(() => (this.alertVisible = false), 4000);
+      setTimeout(() => (this.alertVisible = false), 30000);
     }, 1000);
   }
 

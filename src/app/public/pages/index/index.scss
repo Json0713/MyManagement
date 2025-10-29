@@ -1,7 +1,3 @@
-// ============================
-// index.scss — MyManagement (Optimized)
-// ============================
-
 @use "sass:color";
 
 // ---------- VARIABLES ----------
@@ -82,7 +78,7 @@ $transition: 0.3s ease-in-out;
       transition: transform 0.8s ease;
 
       &:hover {
-        transform: rotate(-2deg) scale(1.05);
+        transform: rotate(-1deg) scale(1.05);
       }
     }
 
@@ -120,6 +116,7 @@ $transition: 0.3s ease-in-out;
   .feature-card {
     border: none;
     border-radius: 16px;
+    cursor: pointer;
     transition: all $transition;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.04);
 

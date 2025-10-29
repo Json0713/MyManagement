@@ -11,7 +11,7 @@ export class Index implements AfterViewInit {
 
   features = [
     {
-      icon: 'bi bi-list-check',
+      icon: 'bi bi-card-checklist',
       title: 'Task Progress',
       desc: 'Track your tasks, goals, and achievements stay organized every day.',
     },
