@@ -9,6 +9,12 @@ export const routes: Routes = [
         loadChildren: () =>
         import('./public/public.routes').then((m) => m.PUBLIC_ROUTES),
     },
+    
+    {
+        path: 'admin',
+        loadChildren: () =>
+        import('./private/private.routes').then(m => m.PRIVATE_ROUTES),
+    },
 
 
 
