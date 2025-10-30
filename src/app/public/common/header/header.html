@@ -56,20 +56,22 @@
               </li>
             </ul>
 
-            <!-- Right side: Login -->
-            <div class="mobile-login">
-              <button class="btn-login" aria-label="Login" routerLink="/login" routerLinkActive="active">
-                <i class="bi bi-leaf"></i><span>Login</span>
-              </button>
+            <div class="d-flex flex-column">
+              <!-- Login -->
+              <div class="mobile-login text-center w-100 mb-2">
+                <button class="btn-login" aria-label="Login" routerLink="/login" routerLinkActive="active">
+                  <i class="bi bi-leaf"></i><span>Login</span>
+                </button>
+              </div>
+
+              <!-- Date-Time -->
+              <div class="mobile-date-time text-center w-100">
+                <app-date-time></app-date-time>
+              </div>
             </div>
+
+
           </div>
-
-          <!-- Bottom Section: Date-Time -->
-          <div class="mobile-date-time text-center mt-2">
-            <app-date-time></app-date-time>
-          </div>
-
-
         </div>
       </div>
 
@@ -115,7 +117,7 @@
               </a>
             </li>
             <li>
-              <!-- Desktop: Add date-time inside dropdown bottom -->
+              <!-- Add date-time -->
               <div class="dropdown-divider"></div>
               <div class="px-3 py-2 text-center small text-muted">
                 <app-date-time></app-date-time>
