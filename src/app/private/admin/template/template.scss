@@ -1,0 +1,53 @@
+.root-container {
+  display: flex;
+  min-height: 100vh;
+  background-color: #f9fafb;
+}
+
+/* Sidebar fixed on the left */
+.sidebar {
+  width: 250px;
+  flex-shrink: 0;
+  background-color: #ffffff;
+  border-right: 1px solid #e5e7eb;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  position: sticky;
+  top: 0;
+  left: 0;
+  overflow-y: auto;
+  z-index: 5; // below header/footer
+}
+
+/* Right-side content area (header, main, footer) */
+.content-wrapper {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-width: 0;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* Header & Footer */
+.header,
+.footer {
+  background-color: #ffffff;
+  border-bottom: 1px solid #e5e7eb;
+  flex-shrink: 0;
+  z-index: 10;
+}
+
+.footer {
+  border-top: 1px solid #e5e7eb;
+  border-bottom: none;
+}
+
+/* Main content area */
+.main {
+  flex: 1;
+  padding: 1.5rem;
+  overflow-y: auto;
+  background-color: #f3f4f6;
+}
