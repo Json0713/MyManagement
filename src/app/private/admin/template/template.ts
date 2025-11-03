@@ -5,6 +5,7 @@ import { CommonModule } from '@angular/common';
 import { Header } from '../../admin/common/header/header';
 import { Sidebar } from '../../admin/common/sidebar/sidebar';
 import { Footer } from '../../admin/common/footer/footer';
+import { SidebarStateService } from '../../services/sidebar-state.service';
 
 @Component({
   selector: 'app-template',
@@ -20,5 +21,5 @@ import { Footer } from '../../admin/common/footer/footer';
   styleUrl: './template.scss',
 })
 export class Template {
-
+  constructor(public sidebarService: SidebarStateService) {}
 }

@@ -1,1 +1,64 @@
-<p>header works!</p>
+<nav class="header-navbar navbar navbar-expand-md sticky-top" role="navigation">
+  <div class="container-fluid d-flex align-items-center justify-content-between">
+
+    <!-- Sidebar Toggler (LEFT) -->
+    <button
+      class="btn btn-outline-light border-0 me-2 d-flex align-items-center justify-content-center"
+      type="button"
+      aria-label="Toggle sidebar"
+      (click)="toggleSidebar()"
+    >
+      <i class="bi bi-list fs-4"></i>
+    </button>
+
+    <!-- Brand -->
+    <a class="navbar-brand d-flex align-items-center gap-2" routerLink="/" aria-label="Dashboard Home">
+      <i class="bi bi-leaf text-accent fs-4"></i>
+      <span class="fw-bold text-white">MyManagement</span>
+    </a>
+
+    <!-- Right Section -->
+    <ul class="navbar-nav ms-auto align-items-center gap-3 flex-row">
+
+      <!-- Profile Dropdown -->
+      <li class="nav-item dropdown">
+        <a
+          class="nav-link dropdown-toggle d-flex align-items-center gap-2"
+          href="#"
+          id="profileDropdown"
+          role="button"
+          data-bs-toggle="dropdown"
+          aria-expanded="false"
+        >
+          <img
+            src="assets/jasonprofilepicture1.jpg"
+            alt="User avatar"
+            class="rounded-circle"
+            width="32"
+            height="32"
+          />
+          <span class="text-white fw-semibold d-none d-md-inline">{{ username }}</span>
+        </a>
+
+        <ul class="dropdown-menu dropdown-menu-end shadow" aria-labelledby="profileDropdown">
+          <li>
+            <a class="dropdown-item d-flex align-items-center gap-2" routerLink="/admin/profile">
+              <i class="bi bi-person-circle"></i><span>Profile</span>
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item d-flex align-items-center gap-2" routerLink="/admin/settings">
+              <i class="bi bi-gear"></i><span>Settings</span>
+            </a>
+          </li>
+          <li><hr class="dropdown-divider" /></li>
+          <li>
+            <a class="dropdown-item text-danger d-flex align-items-center gap-2" (click)="onLogout()">
+              <i class="bi bi-gpu-card text-danger"></i><span>Logout</span>
+            </a>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</nav>

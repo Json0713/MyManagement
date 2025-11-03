@@ -51,3 +51,22 @@
   overflow-y: auto;
   background-color: #f3f4f6;
 }
+
+/* Sidebar toggle behavior */
+.root-container {
+  transition: all 0.3s ease;
+
+  .sidebar {
+    transition: width 0.3s ease;
+  }
+
+  &.sidebar-closed .sidebar {
+    width: 0;
+    border-right: none;
+    overflow: hidden;
+  }
+
+  &.sidebar-closed .content-wrapper {
+    margin-left: 0;
+  }
+}

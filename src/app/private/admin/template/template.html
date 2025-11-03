@@ -1,4 +1,4 @@
-<div class="root-container">
+<div class="root-container" [class.sidebar-closed]="!(sidebarService.isOpen$ | async)">
   <aside class="sidebar">
     <app-sidebar></app-sidebar>
   </aside>

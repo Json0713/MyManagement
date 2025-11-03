@@ -1,1 +1,26 @@
-<p>sidebar works!</p>
+<div class="sidebar-nav-wrapper">
+  @if (sidebarService.isOpen$ | async) {
+    <nav class="sidebar-nav">
+      <ul>
+        <li>
+          <a routerLink="/admin/dashboard" routerLinkActive="active">
+            <i class="bi bi-speedometer2"></i>
+            <span>Dashboard</span>
+          </a>
+        </li>
+        <li>
+          <a routerLink="/admin/calendar" routerLinkActive="active">
+            <i class="bi bi-calendar-event"></i>
+            <span>Calendar</span>
+          </a>
+        </li>
+        <li>
+          <a routerLink="/admin/task" routerLinkActive="active">
+            <i class="bi bi-list-check"></i>
+            <span>Task</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+  }
+</div>
