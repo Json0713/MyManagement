@@ -20,7 +20,12 @@
     <!-- Right Section -->
     <ul class="navbar-nav ms-auto align-items-center gap-3 flex-row">
 
-      <!-- Profile Dropdown -->
+      <li class="nav-item d-none d-md-block">
+        <span class="text-white small fw-semibold">
+          {{ currentDateTime() }}
+        </span>
+      </li>
+
       <li class="nav-item dropdown">
         <a
           class="nav-link dropdown-toggle d-flex align-items-center gap-2"
