@@ -1,6 +1,10 @@
 <div class="sidebar-nav-wrapper">
   @if (sidebarService.isOpen$ | async) {
+
     <nav class="sidebar-nav">
+
+      <div class="nav-label">Admin</div>
+
       <ul>
         <li>
           <a routerLink="/admin/dashboard" routerLinkActive="active">
