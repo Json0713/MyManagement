@@ -32,27 +32,6 @@
     }
   }
 
-  /* Brand */
-  .navbar-brand {
-    color: var(--clr-white);
-    font-weight: 600;
-    letter-spacing: 0.5px;
-    text-decoration: none;
-
-    i {
-      color: var(--clr-accent);
-    }
-
-    span {
-      color: var(--clr-white);
-      font-size: 1.05rem;
-    }
-
-    &:hover {
-      color: var(--clr-accent);
-    }
-  }
-
   /* Profile Section */
   .navbar-nav {
     .nav-link {
@@ -141,9 +120,6 @@
 
   /* Responsive (mobile) */
   @media (max-width: 767.98px) {
-    .navbar-brand span {
-      display: none;
-    }
 
     .navbar-nav {
       gap: 0.6rem;

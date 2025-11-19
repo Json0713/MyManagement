@@ -8,13 +8,8 @@
       aria-label="Toggle sidebar"
       (click)="toggleSidebar()"
     >
-      <i class="bi bi-leaf fs-4"></i>
+      <i class="bi bi-list fs-4"></i>
     </button>
-
-    <!-- Brand -->
-    <a class="navbar-brand d-flex align-items-center gap-2" routerLink="/" aria-label="Dashboard Home">
-      <span class="fw-bold text-white">MyManagement</span>
-    </a>
 
     <!-- Right Section -->
     <ul class="navbar-nav ms-auto align-items-center gap-3 flex-row">
@@ -46,16 +41,16 @@
 
         <ul class="dropdown-menu dropdown-menu-end shadow" aria-labelledby="profileDropdown">
           <li>
-            <a class="dropdown-item d-flex align-items-center gap-2" routerLink="/admin/profile">
+            <a class="dropdown-item mt-1 d-flex align-items-center gap-2" routerLink="/admin/profile">
               <i class="bi bi-person-circle"></i><span>Profile</span>
             </a>
           </li>
           <li>
-            <a class="dropdown-item d-flex align-items-center gap-2" routerLink="/admin/settings">
+            <a class="dropdown-item mt-2 d-flex align-items-center gap-2" routerLink="/admin/settings">
               <i class="bi bi-gear"></i><span>Settings</span>
             </a>
           </li>
-          <li><hr class="dropdown-divider" /></li>
+          <li><hr class="dropdown-divider"/></li>
           <li>
             <a class="dropdown-item text-danger d-flex align-items-center gap-2" (click)="onLogout()">
               <i class="bi bi-gpu-card text-danger"></i><span>Logout</span>
