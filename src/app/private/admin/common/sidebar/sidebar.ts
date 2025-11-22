@@ -12,5 +12,23 @@ import { SidebarStateService } from '../../../services/sidebar-state.service';
 })
 
 export class Sidebar {
+  isQAOpen = false;
+  settingsOpen = false;
+  isSubTasksOpen = false;
+
+  
   constructor(public sidebarService: SidebarStateService) {}
+
+  toggleQA(): void {
+    this.isQAOpen = !this.isQAOpen;
+  }
+
+  toggleSubTasks() {
+    this.isSubTasksOpen = !this.isSubTasksOpen
+  }
+
+  toggleSettings(): void {
+    this.settingsOpen = !this.settingsOpen;
+  }
+
 }

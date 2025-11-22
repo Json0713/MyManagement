@@ -4,11 +4,159 @@
   height: 100%;
 }
 
+/* ------------------------- */
+/* SIDEBAR HEADER / BRAND    */
+/* ------------------------- */
+
+.sidebar-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0.9rem 1.25rem 0.9rem 1.25rem;
+  margin-bottom: 0.25rem;
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+
+  color: var(--clr-white);
+  user-select: none;
+}
+
+.sidebar-header .brand {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-weight: 700;
+  font-size: 1rem;
+  letter-spacing: 0.4px;
+}
+
+.sidebar-header .brand i {
+  font-size: 1.25rem;
+  color: var(--clr-accent);
+}
+
+/* ------------------------- */
+/* SETTINGS BUTTON           */
+/* ------------------------- */
+
+.settings-btn {
+  background: none;
+  border: none;
+  color: var(--clr-white);
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  padding: 0.25rem;
+
+  transition: color 0.25s ease, transform 0.25s ease;
+}
+
+.settings-btn i {
+  font-size: 1.2rem;
+  opacity: 0.85;
+
+  transition: transform 1.45s ease;
+  transform: rotate(0deg);
+}
+
+.settings-btn i.open {
+  transform: rotate(180deg);
+}
+
+.settings-btn:hover i {
+  color: var(--clr-accent);
+}
+
+/* ------------------------- */
+/* SETTINGS DROPDOWN MENU    */
+/* ------------------------- */
+
+.settings-menu {
+  backdrop-filter: blur(4px);
+  border-radius: 10px;
+  margin: 0.5rem 0.75rem 1rem;
+  padding: 0.35rem 0;
+  list-style: none;
+  overflow: hidden;
+  animation: slideFadeIn 0.55s ease-out;
+}
+
+@keyframes slideFadeIn {
+  from {
+    transform: translateY(-6px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.settings-menu li {
+  margin: 0;
+  padding: 0;
+}
+
+.settings-menu a {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+
+  padding: 0.75rem 1rem;
+  margin: 0 0.25rem;
+
+  border-radius: 8px;
+  text-decoration: none;
+  color: var(--clr-white);
+  font-weight: 500;
+
+  transition:
+    background-color 1.25s ease,
+    color 1.25s ease;
+}
+
+.settings-menu a:hover {
+  background: rgba(255, 255, 255, 0.10);
+  color: var(--clr-accent);
+}
+
+.settings-menu i {
+  font-size: 1.1rem;
+  opacity: 0.9;
+}
+
+.settings-menu .divider {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.10);
+  margin: 0.35rem 0.75rem;
+}
+
+/* Dropdown animation */
+@keyframes fadeDrop {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* -------------------------------- */
+/* THEME + WRAPPER                  */
+/* -------------------------------- */
 .sidebar-nav-wrapper {
   --clr-bg: #10262b;
   --clr-bg-dark: #1a3a3f;
   --clr-accent: #00f5d4;
   --clr-white: #ffffff;
+
+  /* new reusable vars */
+  --child-indent: 1.5rem;
+  --dropdown-speed: 0.45s;
+  --dropdown-ease: cubic-bezier(0.32, 0.12, 0.24, 1);
 
   background: linear-gradient(180deg, var(--clr-bg), var(--clr-bg-dark));
   color: var(--clr-white);
@@ -17,10 +165,10 @@
   overflow-y: auto;
   padding-top: 0.75rem;
   box-shadow: inset -1px 0 4px rgba(0, 0, 0, 0.22);
-
   transition: opacity 0.25s ease;
 }
 
+/* Scrollbar */
 .sidebar-nav-wrapper::-webkit-scrollbar {
   width: 5px;
 }
@@ -29,19 +177,22 @@
   border-radius: 5px;
 }
 
+/* -------------------------------- */
+/* LABELS                           */
+/* -------------------------------- */
 .nav-label {
   font-size: 0.75rem;
   text-transform: uppercase;
   opacity: 0.65;
-
   padding: 0.75rem 1.25rem;
   letter-spacing: 0.8px;
-
   color: var(--clr-white);
-
   user-select: none;
 }
 
+/* -------------------------------- */
+/* NAV LIST                         */
+/* -------------------------------- */
 .sidebar-nav ul {
   margin: 0;
   padding: 0;
@@ -52,6 +203,9 @@
   margin-top: 0.25rem;
 }
 
+/* -------------------------------- */
+/* LINKS                            */
+/* -------------------------------- */
 .sidebar-nav a {
   display: flex;
   align-items: center;
@@ -60,8 +214,8 @@
   padding: 0.8rem 1.25rem;
   margin: 0 0.6rem;
   border-radius: 8px;
-  text-decoration: none;
 
+  text-decoration: none;
   color: var(--clr-white);
   font-weight: 500;
 
@@ -73,12 +227,14 @@
     border-color 0.25s ease;
 }
 
+/* Hover */
 .sidebar-nav a:hover {
   background: rgba(255, 255, 255, 0.06);
   color: var(--clr-accent);
   border-left-color: rgba(0, 245, 212, 0.4);
 }
 
+/* Active item */
 .sidebar-nav a.active {
   background: rgba(0, 245, 212, 0.12);
   border-left-color: var(--clr-accent);
@@ -89,4 +245,54 @@
 .sidebar-nav i {
   font-size: 1.15rem;
   opacity: 0.95;
+}
+
+/* -------------------------------- */
+/* DROPDOWN                         */
+/* -------------------------------- */
+
+/* Arrow – from right → down smoothly */
+.arrow {
+  margin-left: auto;
+  transition: transform var(--dropdown-speed) var(--dropdown-ease);
+  transform: rotate(-90deg); /* closed: right */
+}
+
+.arrow.open {
+  transform: rotate(0deg); /* open: down */
+}
+
+/* Parent clickable link */
+.dropdown-parent {
+  cursor: pointer;
+}
+
+/* Children container */
+.dropdown-children {
+  margin-left: var(--child-indent);  /* NEW clean consistent indent */
+  padding-left: 0;
+
+  overflow: hidden;
+
+  /* animation */
+  max-height: 0;
+  opacity: 0;
+  transition:
+    max-height var(--dropdown-speed) var(--dropdown-ease),
+    opacity calc(var(--dropdown-speed) * 0.9) var(--dropdown-ease);
+
+  /* spacing between children */
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+/* When dropdown is open */
+.dropdown-children.open {
+  max-height: 400px; /* enough for multiple children */
+  opacity: 1;
+}
+
+.dropdown-children.nested {
+  margin-left: calc(var(--child-indent) + 1rem); /* deeper indent */
 }

@@ -1,10 +1,53 @@
 <div class="sidebar-nav-wrapper">
   @if (sidebarService.isOpen$ | async) {
+    
+    <!-- Sidebar Header / Brand -->
+    <div class="sidebar-header">
+
+      <div class="brand">
+        <i class="bi bi-leaf"></i>
+        <span>MyManagement</span>
+      </div>
+
+      <button class="settings-btn" (click)="toggleSettings()" aria-label="Settings">
+        <i class="bi bi-gear" [class.open]="settingsOpen"></i>
+      </button>
+
+    </div>
+
+    <!-- Settings Dropdown Menu -->
+    @if (settingsOpen) {
+      <ul class="settings-menu">
+        <li>
+          <a routerLink="/profile">
+            <i class="bi bi-person"></i>
+            <span>Profile</span>
+          </a>
+        </li>
+
+        <li>
+          <a routerLink="/settings">
+            <i class="bi bi-gear-wide-connected"></i>
+            <span>Settings</span>
+          </a>
+        </li>
+
+        <li class="divider"></li>
+
+        <li>
+          <a routerLink="/logout">
+            <i class="bi bi-box-arrow-right"></i>
+            <span>Logout</span>
+          </a>
+        </li>
+      </ul>
+    }
 
     <nav class="sidebar-nav">
 
+      <!-- Admin Section -->
       <div class="nav-label">Admin</div>
-
+      
       <ul>
         <li>
           <a routerLink="/admin/dashboard" routerLinkActive="active">
@@ -27,6 +70,87 @@
           </a>
         </li>
       </ul>
+
+
+      <!-- Project Manager Section -->
+      <div class="nav-label">Project Manager</div>
+      <ul>
+        <!-- Parent Item -->
+        <li>
+          <a class="dropdown-parent" (click)="toggleQA()">
+            <i class="bi bi-diagram-3"></i>
+            <span>IQA</span>
+            <i class="bi bi-chevron-down arrow" [class.open]="isQAOpen"></i>
+          </a>
+
+          <!-- Children submenu (inside same <li>) -->
+          <ul class="dropdown-children" [class.open]="isQAOpen">
+
+            <li>
+              <a class="dropdown-parent" (click)="toggleSubTasks()">
+                <i class="bi bi-list-ul"></i>
+                <span>Subtasks</span>
+                <i class="bi bi-chevron-down arrow" [class.open]="isSubTasksOpen"></i>
+              </a>
+
+              <ul class="dropdown-children nested" [class.open]="isSubTasksOpen">
+
+                <li>
+                  <a routerLink="/qa/subtasks/design" routerLinkActive="active">
+                    <i class="bi bi-brush"></i>
+                    <span>Design</span>
+                  </a>
+                </li>
+
+                <li>
+                  <a routerLink="/qa/subtasks/bugs" routerLinkActive="active">
+                    <i class="bi bi-bug"></i>
+                    <span>Bugs</span>
+                  </a>
+                </li>
+
+              </ul>
+            </li>
+
+            <li>
+              <a routerLink="/qa/jira" routerLinkActive="active">
+                <i class="bi bi-kanban"></i>
+                <span>Jira</span>
+              </a>
+            </li>
+
+            <li>
+              <a routerLink="/qa/task-tracker" routerLinkActive="active">
+                <i class="bi bi-list-task"></i>
+                <span>Task Tracker</span>
+              </a>
+            </li>
+
+            <li>
+              <a routerLink="/qa/links" routerLinkActive="active">
+                <i class="bi bi-link-45deg"></i>
+                <span>Links</span>
+              </a>
+            </li>
+
+          </ul>
+        </li> <!-- END parent li -->
+        
+      </ul>
+
+
+      <!-- Financial Manager Section -->
+      <div class="nav-label">Financial Manager</div>
+
+      <ul>
+        <li>
+          <a routerLink="/admin/status-report" routerLinkActive="active">
+            <i class="bi bi-credit-card-2-front"></i>
+            <span>Status Report</span>
+          </a>
+        </li>
+      </ul>
+
     </nav>
   }
 </div>
