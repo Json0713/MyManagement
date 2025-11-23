@@ -17,6 +17,10 @@
 
     <!-- Settings Dropdown Menu -->
     @if (settingsOpen) {
+
+      <!-- Settings Section -->
+      <div class="nav-label">Settings</div>
+
       <ul class="settings-menu">
         <li>
           <a routerLink="/profile">
@@ -26,7 +30,7 @@
         </li>
 
         <li>
-          <a routerLink="/settings">
+          <a class="mt-1" routerLink="/settings">
             <i class="bi bi-gear-wide-connected"></i>
             <span>Settings</span>
           </a>

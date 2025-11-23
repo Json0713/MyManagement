@@ -53,5 +53,15 @@
   flex: 1;
   padding: 1.5rem;
   overflow-y: auto;
-  background-color: #f3f4f6;
+  background-color: #f3f4f6;  
+}
+
+/* Slim Scrollbar - Main content */
+.main::-webkit-scrollbar {
+  width: 6px;
+}
+
+.main::-webkit-scrollbar-thumb {
+  background-color: rgba(15, 36, 40, 0.600);
+  border-radius: 3px;
 }
