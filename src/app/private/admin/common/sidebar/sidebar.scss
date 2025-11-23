@@ -131,6 +131,30 @@
   margin: 0.35rem 0.75rem;
 }
 
+/* Wrapper to allow open/close animation */
+.settings-wrapper {
+  overflow: hidden;
+  max-height: 0;
+  opacity: 0;
+  transform: translateY(-6px);
+  transition:
+    max-height 0.45s ease,
+    opacity 0.35s ease,
+    transform 0.35s ease;
+}
+
+/* OPEN state */
+.settings-wrapper.open {
+  max-height: 300px; /* should exceed your total dropdown height */
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Remove initial animation from .settings-menu */
+.settings-menu {
+  animation: none;
+}
+
 /* Dropdown animation */
 @keyframes fadeDrop {
   from {

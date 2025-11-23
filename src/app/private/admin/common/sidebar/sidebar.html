@@ -3,7 +3,6 @@
     
     <!-- Sidebar Header / Brand -->
     <div class="sidebar-header">
-
       <div class="brand">
         <i class="bi bi-leaf"></i>
         <span>MyManagement</span>
@@ -12,13 +11,10 @@
       <button class="settings-btn" (click)="toggleSettings()" aria-label="Settings">
         <i class="bi bi-gear" [class.open]="settingsOpen"></i>
       </button>
-
     </div>
 
     <!-- Settings Dropdown Menu -->
-    @if (settingsOpen) {
-
-      <!-- Settings Section -->
+    <div class="settings-wrapper" [class.open]="settingsOpen">
       <div class="nav-label">Settings</div>
 
       <ul class="settings-menu">
@@ -45,8 +41,10 @@
           </a>
         </li>
       </ul>
-    }
+    </div>
 
+
+    <!-- Navs Section -->
     <nav class="sidebar-nav">
 
       <!-- Admin Section -->
