@@ -8,7 +8,7 @@
         <span>MyManagement</span>
       </div>
 
-      <button class="settings-btn" (click)="toggleSettings()" aria-label="Settings">
+      <button class="settings-btn" title="Settings" (click)="toggleSettings()" aria-label="Settings">
         <i class="bi bi-gear" [class.open]="settingsOpen"></i>
       </button>
     </div>
@@ -81,7 +81,7 @@
         <li>
           <a class="dropdown-parent" (click)="toggleQA()">
             <i class="bi bi-diagram-3"></i>
-            <span>IQA</span>
+            <span>IQA Systems</span>
             <i class="bi bi-chevron-down arrow" [class.open]="isQAOpen"></i>
           </a>
 
