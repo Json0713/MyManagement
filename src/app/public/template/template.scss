@@ -16,6 +16,16 @@
   padding: 2rem 1rem;
 }
 
+/* Slim Scrollbar - Main content */
+.main::-webkit-scrollbar {
+  width: 6px;
+}
+
+.main::-webkit-scrollbar-thumb {
+  background-color: rgba(15, 36, 40, 0.600);
+  border-radius: 3px;
+}
+
 .header,
 .footer {
   flex-shrink: 0;
